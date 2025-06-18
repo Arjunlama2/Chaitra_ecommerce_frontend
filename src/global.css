@@ -1,0 +1,10 @@
+@layer components {
+  .primary-btn {
+    @apply w-[163px] py-4 px-10 font-[700] text-base text-white  rounded-[2px] bg-[#FB2E86];
+  }
+
+  .headerUl li{
+    @apply flex items-center gap-1
+  }
+}
+
