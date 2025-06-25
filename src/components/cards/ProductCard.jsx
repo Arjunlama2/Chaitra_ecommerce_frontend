@@ -6,7 +6,7 @@ const ProductCard = ({product}) => {
    
   return (
    
-      <div className="w-[270px] h-fit shadow-sm  group relative">
+      <div className="w-[270px] h-fit shadow-sm  group relative transition-transform hover:-translate-y-3">
         <div className="bg-[#F6F7FB] h-[236px] pt-[46px] w-full flex flex-col items-center relative">
 
             <div className="absolute   top-[18px] left-[18px]   flex gap-4 items-center ">
