@@ -4,6 +4,9 @@ import Navbar from '../../components/landing/Navbar'
 import Hero from '../../components/landing/Hero'
 import Products from '../../components/landing/Products'
 import LatestProducts from '../../components/landing/LatestProducts'
+import Offer from '../../components/landing/Offer'
+import Unique from '../../components/landing/Unique'
+import Trending from '../../components/landing/Trending'
 
 function Home() {
   return (
@@ -13,6 +16,9 @@ function Home() {
     <Hero/>
     <Products/>
     <LatestProducts/>
+    <Offer/>
+    <Unique/>
+    <Trending/>
     
     </>
   )
