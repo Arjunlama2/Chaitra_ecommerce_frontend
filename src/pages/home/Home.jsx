@@ -7,6 +7,7 @@ import LatestProducts from '../../components/landing/LatestProducts'
 import Offer from '../../components/landing/Offer'
 import Unique from '../../components/landing/Unique'
 import Trending from '../../components/landing/Trending'
+import Discount from '../../components/landing/Discount'
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
     <Offer/>
     <Unique/>
     <Trending/>
+    <Discount/>
     
     </>
   )

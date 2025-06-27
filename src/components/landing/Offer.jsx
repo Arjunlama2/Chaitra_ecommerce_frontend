@@ -35,7 +35,7 @@ const Offer = () => {
  <div className='flex flex-col items-center justify-center gap-5 w-[200px] h-[280px]  shadow-sm  p-3' key={index}>
         <img src={offer.image} alt="service" className=' object-cover' />
         <p className='text-[22px] text-[#151875] font-[700]'>{offer.title}</p>
-        <p className='text-[14px] text-[#1A0B5B4D] font-[400]'>{offer.description}</p>
+        <p className='text-[14px] text-[#1A0B5B4D] font-[400] text-center'>{offer.description}</p>
       </div>
       ))    
     }
