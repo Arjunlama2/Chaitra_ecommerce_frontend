@@ -1,15 +1,20 @@
 import React from 'react'
 import { productDetails } from '../../data/productData'
 import ProductCard from '../cards/ProductCard'
+import useFetch from '../../hooks/useFetch'
 
 const Products = () => {
+
+
+
+  const {data} = useFetch("product")
+  console.log(data,"this is products")
   return (
     <div className='w-full flex flex-col mt-18 py-8'>
 
     <div className='w-full flex justify-center gap-[30px] mx-auto'>
-        {productDetails.map((product,index)=>(
+        {data.map((product,index)=>(
             <ProductCard key={index} product={product}/>
-
         ))}
     </div>
     <div className='w-full mt-[53px] flex gap-1 justify-center '>{[1,2,3].map((_,index)=>(

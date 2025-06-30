@@ -8,12 +8,11 @@ import Offer from '../../components/landing/Offer'
 import Unique from '../../components/landing/Unique'
 import Trending from '../../components/landing/Trending'
 import Discount from '../../components/landing/Discount'
+import Newsletter from '../../components/landing/NewLetter'
 
 function Home() {
   return (
     <>
-    <Header/>
-    <Navbar/>
     <Hero/>
     <Products/>
     <LatestProducts/>
@@ -21,6 +20,7 @@ function Home() {
     <Unique/>
     <Trending/>
     <Discount/>
+    <Newsletter/>
     
     </>
   )

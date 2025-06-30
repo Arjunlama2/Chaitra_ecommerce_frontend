@@ -32,7 +32,7 @@ const ProductCard = ({product}) => {
             <div className="w-[14px] h-[4px] bg-[#00009D] rounded-[10px] group-hover:bg-[#FFEAC1]" />
           </div>
           <p className="text-[#151875]  text-[14px] ">Code - Y523201</p>
-          <p className="text-[#151875]  text-[14px] ">$42.00</p>
+          <p className="text-[#151875]  text-[14px] ">{product.price}</p>
         </div>
       </div>
   
