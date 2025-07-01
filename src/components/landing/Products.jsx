@@ -2,6 +2,7 @@ import React from 'react'
 import { productDetails } from '../../data/productData'
 import ProductCard from '../cards/ProductCard'
 import useFetch from '../../hooks/useFetch'
+import Breadcrumbs from '../reusable/Breadcrumbs'
 
 const Products = () => {
 
@@ -10,10 +11,12 @@ const Products = () => {
   const {data} = useFetch("product")
   console.log(data,"this is products")
   return (
+    <>
+    <Breadcrumbs/>
     <div className='w-full flex flex-col mt-18 py-8'>
 
     <div className='w-full flex justify-center gap-[30px] mx-auto'>
-        {data.map((product,index)=>(
+        {data?.map((product,index)=>(
             <ProductCard key={index} product={product}/>
         ))}
     </div>
@@ -23,6 +26,8 @@ const Products = () => {
 
 
     </div>
+    </>
+
 
   )
 }

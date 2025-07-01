@@ -5,6 +5,7 @@ import Login from "./Login";
 import Products from "./components/landing/Products";
 import Layout from "./Layout";
 import Shopping from "./pages/Shopping";
+import ProductDetails from "./pages/[slug]/ProductDetails";
 
 function App() {
   return (
@@ -13,8 +14,10 @@ function App() {
       <Route path="login" element={<Login />} />
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} /> 
-        <Route path="products" element={<Products />} />{" "}
-        <Route path="shop" element={<Shopping />} />{" "}
+        <Route path="/products" element={<Products />} />{" "}
+        <Route path="/shop" element={<Shopping />} />{" "}
+        <Route path="products/product-details/:id" element={<ProductDetails />} />{" "}
+        
         {/* Renders at /about */}
         {/* <Route path="contact" element={<Contact />} />{" "} */}
         {/* Renders at /contact */}

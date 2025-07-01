@@ -1,8 +1,10 @@
 import React from "react";
 import { BiHeart, BiSearch } from "react-icons/bi";
 import { IoCartOutline } from "react-icons/io5";
+import { useNavigate } from "react-router";
 
 const ProductCard = ({product}) => {
+  const navigate = useNavigate()
    
   return (
    
@@ -15,11 +17,11 @@ const ProductCard = ({product}) => {
                 <BiSearch className="icon-hover"/>
             </div>
           <div className="w-[178px] aspect-square mb-3">
-            <img src={`${product.imgPath}`} alt="" className="w-full h-full" />
+            <img src={`${product?.imgPath}`} alt="product image" className="w-full h-full" />
 
 
           </div>
-          <button className="opacity-0  transition-all duration-300   group-hover:opacity-100 absolute bottom-2 bg-[#08D15F] w-fit rounded-[2px] px-3 py-2 text-white  text-sm  ">View Details</button>
+          <button className="opacity-0  transition-all duration-300   group-hover:opacity-100 absolute bottom-2 bg-[#08D15F] w-fit rounded-[2px] px-3 py-2 text-white  text-sm  " onClick={()=>navigate(`/products/product-details/${product.id}`)}>View Details</button>
         </div>
 
         <div className="w-full flex flex-col items-center py-4 gap-3 transition-all duration-400 ease-in-out group-hover:bg-[#2F1AC4]">
