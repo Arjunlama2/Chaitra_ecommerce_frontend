@@ -16,7 +16,7 @@ function App() {
         <Route index element={<Home />} /> 
         <Route path="/products" element={<Products />} />{" "}
         <Route path="/shop" element={<Shopping />} />{" "}
-        <Route path="products/product-details/:id" element={<ProductDetails />} />{" "}
+        <Route path="products/product-details/:id" element={<ProductDetails />} />
         
         {/* Renders at /about */}
         {/* <Route path="contact" element={<Contact />} />{" "} */}
