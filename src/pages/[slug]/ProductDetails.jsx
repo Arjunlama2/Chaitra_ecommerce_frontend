@@ -1,13 +1,15 @@
 import React from 'react'
 import { useParams } from 'react-router'
+import ProductDetailCard from '../../components/cards/ProductDetailCard'
 
 const ProductDetails = () => {
     const {id} = useParams()
   return (
-    <div>
+    <div className='w-full'>
 
-        <div>ProductDetails</div>
-        <p>{id}</p>
+
+       <ProductDetailCard/>
+  
     </div>
   )
 }

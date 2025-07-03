@@ -10,7 +10,8 @@ const Header = () => {
     <div className="w-full flex justify-center  md:h-[44px] bg-[#7E33E0]">
     <div className="lg:w-[80%] w-full  flex flex-wrap lg:flex-nowrap justify-between">
 
-      <div className="left-side w-full flex justify-center flex-wrap sm:flex-nowrap mx-auto gap-3 sm:gap-8  lg:w-fit px-3 text-[#F1F1F1]  ">
+      <div className="left-side w-full flex justify-start flex-wrap sm:flex-nowrap  gap-3 sm:gap-8  lg:w-1/2
+        text-[#F1F1F1] ">
         <p className="  flex items-center gap-[10px] ">
           <CgMail className="text-base" />
           <span className="">randomgmail123@gmail.com</span>
@@ -21,7 +22,7 @@ const Header = () => {
           <span>randomgmail123@gmail.com</span>
         </p>
       </div>
-      <div className="right-side flex items-center justify-center w-full  text-[#F1F1F1]  bg-inherit">
+      <div className="right-side flex items-center justify-end w-full lg:w-1/2  text-[#F1F1F1]  bg-inherit">
         <ul className=" headerUl flex items-center gap-2">
           <li>
             English <IoIosArrowDown />
@@ -39,6 +40,7 @@ const Header = () => {
         <GrCart />
 
       </div>
+
       </div>
     </div>
   );
