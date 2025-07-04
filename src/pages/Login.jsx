@@ -1,35 +1,19 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useForm } from "react-hook-form"
 import { useDispatch, useSelector } from 'react-redux'
-import { login } from './features/user/userSlice'
-import { useNavigate } from 'react-router'
-// import { Counter } from './components/Counter'
 
-const Login = () => {
-  const dispatch = useDispatch()
-  const user = useSelector((state)=>state.user.user)
-  console.log(user,"value from userslice")
+const login = () => {
+
+    const dispatch = useDispatch()
+    const user = useSelector((state)=>state.user)
      const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm()
-  const onSubmit = (data) => dispatch(login(data))
-
-  const userData = localStorage.getItem('user_data')
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    if(userData){
-
-      navigate('/')
-    }
-  }, [])
-  
+  const onSubmit = (data) => console.log(data)
   return (
-
-    <>
     <div className='flex flex-col justify-center items-center h-screen'>
       <div className='flex flex-col justify-center items-center bg-[#FFFFFF] shadow-[0_0_60px_10px_rgba(0,0,0,0.03)]  w-[533px] h-[474px]'>
         <p className='text-[32px] font-bold'>Login</p>
@@ -46,9 +30,7 @@ const Login = () => {
         <p className='text-sm mt-4 text-[#9096B2]'> Don't have an Account? <span className='text-[#FB2E86]'> <a href='/signup'>Create account</a></span></p>
       </div>
     </div>
-    {/* <Counter/> */}
-    </>
   )
 }
 
-export default Login
+export default login

@@ -6,17 +6,18 @@ import Products from "./components/landing/Products";
 import Layout from "./Layout";
 import Shopping from "./pages/Shopping";
 import ProductDetails from "./pages/[slug]/ProductDetails";
+import Protected from "./components/Protected";
 
 function App() {
   return (
     <Routes>
-      
-      <Route path="login" element={<Login />} />
+      <Route path="/" element={<Protected/>}>
+      <Route path="/login" element={<Login />} />
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} /> 
         <Route path="/products" element={<Products />} />{" "}
         <Route path="/shop" element={<Shopping />} />{" "}
-        <Route path="products/product-details/:id" element={<ProductDetails />} />
+        <Route path="/products/product-details/:id" element={<ProductDetails />} />
         
         {/* Renders at /about */}
         {/* <Route path="contact" element={<Contact />} />{" "} */}
@@ -24,6 +25,8 @@ function App() {
       </Route>
 
       <Route path="signup" element={<div>hi</div>} />
+      
+   </Route>
     </Routes>
   );
 }
