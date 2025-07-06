@@ -1,7 +1,17 @@
 import React from "react";
 import { MdSearch } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { logout } from "../../features/user/authSlice";
+import { useNavigate } from "react-router";
 
 function Footer() {
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const handleLogout = () => {
+dispatch(logout())
+    navigate('/login', { replace: true });
+  }
   return (
     <div className="flex flex-col justify-center items-center bg-[#EEEFFB]  mt-[50px]">
 
@@ -17,6 +27,8 @@ function Footer() {
                     </div>
             <p>Contact Info</p>
             <p>17 Princess Road, London, Greater London NW1 8JR, UK</p>
+
+            <button className="primary-btn" onClick={handleLogout}>Log Out</button>
           </div>
         </div>
 
