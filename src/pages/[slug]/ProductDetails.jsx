@@ -1,17 +1,20 @@
-import React from 'react'
-import { useParams } from 'react-router'
-import ProductDetailCard from '../../components/cards/ProductDetailCard'
+import React from "react";
+import { useParams } from "react-router";
+import ProductDetailCard from "../../components/cards/ProductDetailCard";
+import ProdDetailsInfo from "../../components/ProdDetailsInfo";
 
 const ProductDetails = () => {
-    const {id} = useParams()
+  const { id } = useParams();
   return (
-    <div className='w-full'>
+    <>
+      <div className="w-full">
+        <ProductDetailCard />
+      </div>
+      <div>
+        <ProdDetailsInfo />
+      </div>
+    </>
+  );
+};
 
-
-       <ProductDetailCard/>
-  
-    </div>
-  )
-}
-
-export default ProductDetails
+export default ProductDetails;

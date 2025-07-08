@@ -10,6 +10,10 @@ import Trending from '../../components/landing/Trending'
 import Discount from '../../components/landing/Discount'
 import Newsletter from '../../components/landing/NewLetter'
 
+
+
+
+
 function Home() {
   return (
     <>
