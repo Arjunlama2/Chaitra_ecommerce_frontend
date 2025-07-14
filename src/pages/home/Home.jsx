@@ -24,8 +24,7 @@ function Home() {
     <Unique/>
     <Trending/>
     <Discount/>
-    <Newsletter/>
-    
+    <Newsletter/>  
     </>
   )
 }

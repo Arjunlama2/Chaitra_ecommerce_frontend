@@ -1,15 +1,50 @@
-import React from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../features/user/authSlice';
+import axios from 'axios';
+import { serverUrl } from '../api';
 
 // get token from local storage
 // user/me -fetchdata
 // store it in global store
 
 export const Protected = ({ children }) => {
-  const { isAuthenticated} = useSelector(state => state.auth);
+  const token = localStorage.getItem('token')
+ const dispatch = useDispatch();
+  const { user, isAuthenticated,isLoading } = useSelector((state) => state.auth);
 
-  const location = useLocation();
+  console.log(user,"this is user state")
+  console.log(token, "this is token");
+
+
+  const getMe = async () => {
+    const res = await axios.get(`${serverUrl}/user/me`, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    });
+
+    console.log(res,'this is response')
+
+ 
+    const data = res.data
+    console.log(data,"this is user")
+
+
+    dispatch(setUser(data))
+
+
+
+    console.log(res, "this is response");
+  };
+  useEffect(() => {
+    getMe();
+  },[]);
+
+
+
+
   
   // if (isLoading) {
   //   return (
@@ -18,10 +53,15 @@ export const Protected = ({ children }) => {
   //     </div>
   //   );
   // }
+    if(isLoading) return <p>State is Loading...</p>
+
+    if(!isAuthenticated){
+     <Navigate to={'/login'} replace/>
+    }
+ 
+
+    return children;
   
-  if (!isAuthenticated) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
-  }
+
   
-  return children;
 };

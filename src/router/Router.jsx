@@ -9,6 +9,7 @@ import Shopping from "../pages/Shopping";
 import Products from "../components/landing/Products";
 import ProductDetails from "../pages/[slug]/ProductDetails";
 import Signup from "../pages/Signup";
+import Pages from "../pages/Pages";
 
 export const router = createBrowserRouter([
   {
@@ -18,18 +19,14 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Protected>
             <Home />
-          </Protected>
         ),
       },
       {
         path:"products",
         // index: true,
         element: (
-          <Protected>
             <Products />
-          </Protected>
         ),
       },
 
@@ -37,25 +34,25 @@ export const router = createBrowserRouter([
       {
         path: "dashboard",
         element: (
-          <Protected>
             <Shopping />
-          </Protected>
         ),
       },
       {
         path: "shop",
         element: (
-          <Protected>
             <Shopping />
-          </Protected>
         ),
       },
       {
         path: "product/:id",
         element: (
-          <Protected>
             <ProductDetails/>
-          </Protected>
+        ),
+      },
+      {
+        path: "pages",
+        element: (
+            <Pages/>
         ),
       },
     ],

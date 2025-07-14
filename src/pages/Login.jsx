@@ -8,6 +8,7 @@ import {
   loginSuccess,
   setUser,
 } from "../features/user/authSlice";
+import { toast } from "react-toastify";
 // import { Counter } from './components/Counter'
 
 const Login = () => {
@@ -26,6 +27,7 @@ const Login = () => {
   const onSubmit = async (formData) => {
     dispatch(loginStart());
     console.log("started");
+    console.log(formData,"this is form data")
 
     try {
       const response = await fetch('https://chaitra-ecommerce-backend.onrender.com/api/v1/user/login', {
@@ -37,7 +39,9 @@ const Login = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Login failed');
+        const errorMsg = await response.json()
+       
+        throw new Error(errorMsg.message || 'Login failed');
       }
 
       const data = await response.json();
@@ -46,14 +50,19 @@ const Login = () => {
       // store token in local storage
       console.log(data)
 
+      // localStorage.setItem('token',data.token)
 
+      dispatch(loginSuccess(data.token));
 
-      // dispatch(loginSuccess(formData));
       // dispatch(setUser(userData))
 
       // localStorage.setItem("user", JSON.stringify(userData));
+      toast.success("Login successful")
       navigate("/");
+
     } catch (error) {
+      toast.error(error.message)
+      
       dispatch(loginFailure(error.message));
     }
   };

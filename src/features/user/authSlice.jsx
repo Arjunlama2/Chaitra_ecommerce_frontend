@@ -20,10 +20,10 @@ const authSlice = createSlice({
     // Login success
     loginSuccess: (state, action) => {
       state.isLoading = false;
-      state.user = action.payload;
+      state.user = JSON.stringify(action.payload);
       state.isAuthenticated = true;
       state.error = null;
-      localStorage.setItem("user", JSON.stringify(action.payload));
+      localStorage.setItem("token", action.payload);
     },
 
     // Login failed
@@ -39,6 +39,7 @@ const authSlice = createSlice({
       state.user = null;
       state.isAuthenticated = false;
       state.isLoading = false;
+      localStorage.clear()
       state.error = null;
     },
 
@@ -48,7 +49,7 @@ const authSlice = createSlice({
       state.isLoading = false;
     },
   },
-});
+}); 
 
 // Export actions and reducer
 export const { loginStart, loginSuccess, loginFailure, logout, setUser } =

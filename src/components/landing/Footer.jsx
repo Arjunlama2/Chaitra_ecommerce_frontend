@@ -9,7 +9,7 @@ function Footer() {
   const navigate = useNavigate();
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/login", { replace: true });
+   navigate("/login",{replace:true});
   };
   return (
     <div className="flex flex-col justify-center items-center bg-[#EEEFFB]  mt-[50px]">
