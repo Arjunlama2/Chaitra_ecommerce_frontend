@@ -11,7 +11,7 @@ const ProductDetails = () => {
 
   return (
     <>
-      <p>user email: {user.email}</p>
+      <p>user email: {user}.email</p>
       <div className="w-full">
         <ProductDetailCard />
       </div>

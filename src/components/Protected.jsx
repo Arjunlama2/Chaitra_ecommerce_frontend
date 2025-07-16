@@ -53,7 +53,7 @@ export const Protected = ({ children }) => {
   //     </div>
   //   );
   // }
-    if(isLoading) return <p>State is Loading...</p>
+    // if(isLoading) return <p>State is Loading...</p>
 
     if(!isAuthenticated){
      <Navigate to={'/login'} replace/>
